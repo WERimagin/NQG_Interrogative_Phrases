@@ -1,11 +1,11 @@
 # NQG_Interrogative_Phrases
 
-This repository is the implemention of the paper of Neural Question Generation using interrogative phrases at INLG 2019.
-This code is based on [the openNMT project](https://github.com/OpenNMT/OpenNMT) and the [Pytorch-BERT](https://github.com/huggingface/pytorch-transformers)
+This repository is the implementation of the paper of Neural Question Generation using interrogative phrases at INLG 2019.
+This code is based on [the OpenNMT project](https://github.com/OpenNMT/OpenNMT) and the [Pytorch-BERT](https://github.com/huggingface/pytorch-transformers)
 
 ## Requirement
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ## How to use
 
@@ -13,7 +13,7 @@ pip install -r requirements.txt
 
 0.Corenlp
 
-This codes use (Standford CoreNLP)[https://stanfordnlp.github.io/CoreNLP/] for preprocess. Please download the link and activate it by the below command
+This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for preprocess. Please download the link and activate it by the below command
 
     java -mx4g -cp "\*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 30000
 
