@@ -1,7 +1,7 @@
 # NQG_Interrogative_Phrases
 
 This repository is the implemention of the paper of Neural Question Generation using interrogative phrases at INLG 2019.
-This code is based on (the openNMT project)[https://github.com/OpenNMT/OpenNMT] and the (Pytorch-BERT)[https://github.com/huggingface/pytorch-transformers]
+This code is based on [the openNMT project](https://github.com/OpenNMT/OpenNMT) and the [Pytorch-BERT](https://github.com/huggingface/pytorch-transformers)
 
 ## Requirement
 
@@ -15,15 +15,15 @@ pip install -r requirements.txt
 
 This codes use (Standford CoreNLP)[https://stanfordnlp.github.io/CoreNLP/] for preprocess. Please download the link and activate it by the below command
 
-  java -mx4g -cp "\*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 30000
+    java -mx4g -cp "\*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 30000
 
 1.download the data
 
-  wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json -P data/
-  wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json -P data/
-  wget http://nlp.stanford.edu/data/glove.840B.300d.zip -P data/
-  unzip glove.840B.300d.zip
-  rm glove.840B.300d.zip
+    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json -P data/
+    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json -P data/
+    wget http://nlp.stanford.edu/data/glove.840B.300d.zip -P data/
+    unzip glove.840B.300d.zip
+    rm glove.840B.300d.zip
 
 2.preprocess data
 
