@@ -4,6 +4,7 @@ import nltk
 from nltk.tokenize import word_tokenize,sent_tokenize
 from nltk.translate.bleu_score import corpus_bleu,sentence_bleu
 from onmt.utils.corenlp import CoreNLP
+import numpy as np
 
 from tqdm import tqdm
 from collections import defaultdict

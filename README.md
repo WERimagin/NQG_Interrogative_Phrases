@@ -22,7 +22,7 @@ This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for p
     wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json -O data/squad-train-v1.1.json
     wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json -O data/squad-dev-v1.1.json
     wget http://nlp.stanford.edu/data/glove.840B.300d.zip -P data/
-    unzip data/glove.840B.300d.zip
+    unzip data/glove.840B.300d.zip -d data/
 
 2.preprocess data
 
@@ -52,14 +52,14 @@ This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for p
     -fix_word_vecs_enc -fix_word_vecs_dec \
     -copy_attn -copy_attn_type general -coverage_attn -lambda_coverage 1 \
     -reuse_copy_attn -copy_loss_by_seqlength \
-    -gpu_ranks 1 -world_size 1 \
+    -gpu_ranks 3 -world_size 1 \
     -optim sgd -learning_rate 1 -learning_rate_decay 0.5 -start_decay_steps 20000 -decay_steps 2500 -train_steps 50000
 
 4.Generate
 
     python translate.py \
     -src data/squad-src-test-interro-repanswer.txt \
-    -output squad-pred-test-interro-repanswer.txt \
+    -output data/squad-pred-test-interro-repanswer.txt \
     -replace_unk -dynamic_dict \
     -length_penalty avg \
     -model model_data/<model_name>
@@ -69,7 +69,7 @@ This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for p
     python2 qgevalcap/eval.py \
     -src data/squad-src-test-interro-repanswer.txt \
     -tgt data/squad-tgt-test-interro-repanswer.txt \
-    -out data/squad-pred-test-repanswer.txt
+    -out data/squad-pred-test-interro-repanswer.txt
 
 If you want the result without interrogative answer,
 
