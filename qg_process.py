@@ -80,7 +80,7 @@ def data_process(input_path,interro_path,train=False):
         interro_data=json.load(f)
 
     use_interro=True
-    use_answer=False
+    use_answer=True
     use_pre_interro=False
     replace_answer=True
 

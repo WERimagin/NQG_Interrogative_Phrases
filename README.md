@@ -19,17 +19,16 @@ This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for p
 
 1.download the data
 
-    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json -P data/
-    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json -P data/
+    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json -O data/squad-train-v1.1.json
+    wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json -O data/squad-dev-v1.1.json
     wget http://nlp.stanford.edu/data/glove.840B.300d.zip -P data/
-    unzip glove.840B.300d.zip
-    rm glove.840B.300d.zip
+    unzip data/glove.840B.300d.zip
 
 2.preprocess data
 
     python qg_prepro_corenlp.py
 
-    python qg_preprocess.py
+    python qg_process.py
 
     python preprocess.py \
     -train_src data/squad-src-train-interro-repanswer.txt \
