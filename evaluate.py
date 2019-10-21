@@ -60,27 +60,11 @@ def metric_max_over_ground_truths(metric_fn, prediction, ground_truths):
 
 def evaluate(dataset, predictions):
     f1 = exact_match = 0
-    total=-1
     all_count=0
-
-    src_data=[]
-    with open("data/squad-src-dev-full-interro.txt") as f:
-        for line in f:
-            src_data.append(line.strip())
-
-    interro_data=[]
-    with open("data/squad-interro-dev-full-interro.txt") as f:
-        for line in f:
-            interro_data.append(line.strip())
-
 
     for article in dataset:
         for paragraph in article['paragraphs']:
             for qa in paragraph['qas']:
-                total += 1
-                src_sentence=src_data[total]
-                if args.interro!="" and args.interro not in interro_data[total]:
-                    continue
                 if "<UNK>" in qa["question"]:
                     continue
                 if qa['id'] not in predictions:
@@ -97,7 +81,6 @@ def evaluate(dataset, predictions):
                 f1 += metric_max_over_ground_truths(
                     f1_score, prediction, ground_truths)
 
-    total+=1
     exact_match = 100.0 * exact_match / all_count
     f1 = 100.0 * f1 / all_count
 
@@ -114,9 +97,6 @@ if __name__ == '__main__':
     parser.add_argument('--prediction_file', help='Prediction File')
     parser.add_argument('--modify', action="store_true")
 
-    parser.add_argument('--interro', type=str, default="")
-    parser.add_argument('--src', type=str, default="")
-    parser.add_argument('--print', type=int, default="0")
     args = parser.parse_args()
 
     with open(args.dataset_file) as dataset_file:
