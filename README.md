@@ -15,7 +15,7 @@ This code is based on [the OpenNMT project](https://github.com/OpenNMT/OpenNMT) 
 
 This codes use [Standford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) for preprocess. Please download the link and activate it by the below command
 
-    java -mx4g -cp "\*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 30000
+    java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 30000
 
 1.download the data
 
