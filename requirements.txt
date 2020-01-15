@@ -5,7 +5,6 @@ git+https://github.com/pytorch/text.git@master#wheel=torchtext
 future
 configargparse
 nltk
-tqdm
 # Accessing files from S3 directly.
 boto3
 # Used for downloading models over HTTP
