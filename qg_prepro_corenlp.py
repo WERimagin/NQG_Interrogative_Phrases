@@ -1,6 +1,5 @@
-#SQuADのデータ処理
-#必要条件:CoreNLP
-#Tools/core...で
+#process SQuAD
+#require:CoreNLP
 #java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
 
 import os
@@ -13,10 +12,9 @@ import collections
 import random
 from onmt.utils.corenlp import CoreNLP
 
+#remove duplicate words: I love the the bread.
 #連続して出てくる単語:the the ...のようなものを取り除く　
-#単語が連続して現れている部分は削除する
 #tokenizeもこの中で行う
-
 def overlap_rm(sentence):
     not_rm_list=["(",")"]
     if sentence=="": return ""
@@ -32,10 +30,7 @@ def overlap_rm(sentence):
     return " ".join(new_sentence)
 
 
-
 def answer_find(context_text,context_sentences,answer_start,answer_end):
-
-
     for i,(start_p,end_p) in enumerate(context_sentences):
         #print(start_p,end_p,i)
         if start_p<=answer_start<=end_p:

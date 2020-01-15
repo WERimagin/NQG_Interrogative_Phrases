@@ -47,12 +47,19 @@ from onmt.train_single import main as single_main
 from onmt.utils.parse import ArgumentParser
 
 
+
 def main(opt):
     ArgumentParser.validate_train_opts(opt)
     ArgumentParser.update_model_opts(opt)
     ArgumentParser.validate_model_opts(opt)
 
     nb_gpu = len(opt.gpu_ranks)
+
+    if not os.path.isdir(opt.data):
+        os.makedirs(opt.data)
+    if not os.path.isdir(opt.save_model ):
+        os.makedirs(opt.save_model )
+
 
     #gpuを複数指定した場合
     if opt.world_size > 1:
