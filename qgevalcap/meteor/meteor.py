@@ -7,7 +7,7 @@ import os
 import sys
 import subprocess
 import threading
-from tqdm import tqdm
+#from tqdm import tqdm
 
 # Assumes meteor-1.5.jar is in the same directory as meteor.py.  Change as needed.
 METEOR_JAR = 'meteor-1.5.jar'
@@ -38,7 +38,7 @@ class Meteor:
 
         eval_line = 'EVAL'
         self.lock.acquire()
-        for i in tqdm(imgIds):
+        for i in imgIds:
             assert(len(res[i]) == 1)
             stat = self._stat(res[i][0], gts[i])
             eval_line += ' ||| {}'.format(stat)
