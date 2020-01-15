@@ -55,10 +55,11 @@ def main(opt):
 
     nb_gpu = len(opt.gpu_ranks)
 
-    if not os.path.isdir(opt.data):
-        os.makedirs(opt.data)
-    if not os.path.isdir(opt.save_model ):
-        os.makedirs(opt.save_model )
+
+    #if not os.path.isdir(opt.data):
+    #    os.makedirs(opt.data)
+    #if not os.path.isdir(opt.save_model ):
+    #    os.makedirs(opt.save_model)
 
 
     #gpuを複数指定した場合
