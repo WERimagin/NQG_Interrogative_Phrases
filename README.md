@@ -3,6 +3,8 @@
 This repository is the implementation of the paper of Neural Question Generation using interrogative phrases at INLG 2019.
 This code is based on [the OpenNMT project](https://github.com/OpenNMT/OpenNMT) and the [Pytorch-BERT](https://github.com/huggingface/pytorch-transformers)
 
+Notice: We use torch==1.1.0 and cuda==9.1.85 . If your cuda (or cudnn) version is different from it, this code may not work due to the compatibility with pytorch.
+
 ## Requirement
 
     pip install -r requirements.txt
