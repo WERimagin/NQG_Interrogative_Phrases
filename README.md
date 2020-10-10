@@ -144,3 +144,7 @@ If you want the result without interrogative answer,
     python evaluate.py \
     --dataset_file data/squad-dev-interro-repanswer-modify.json \
     --prediction_file data/interro-repanswer-modify/predictions.json
+
+
+### LICENSE
+MIT
